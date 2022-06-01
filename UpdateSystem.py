@@ -17,7 +17,6 @@ from git import Repo
 import os
 import shutil
 import glob
-import pip
 import pwd
 
 val = requests.get("https://raw.githubusercontent.com/Numbers-Technologies/Gorgona/update_system/VERSION")
