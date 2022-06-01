@@ -1,3 +1,16 @@
+import pip
+
+packages = ['requests','gitpython','shutil','sqlite3']
+
+def install_package(package):
+    if hasattr(pip, 'main'):
+        pip.main(['install', package])
+    else:
+        pip._internal.main(['install', package])
+
+for package in packages:
+	install_package(package)
+
 import requests
 import sqlite3
 from git import Repo
@@ -43,12 +56,6 @@ class WWD:
 		self.cursor.execute("create table test (version String)")
 		self.cursor.execute(f"insert into test (version) VALUES ('{vers}')")
 		self.sqlite_connection.commit()
-
-def install_package(package):
-    if hasattr(pip, 'main'):
-        pip.main(['install', package])
-    else:
-        pip._internal.main(['install', package])
 
 
 def update():
