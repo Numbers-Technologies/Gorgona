@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <script src="{% static 'index.js' %}"></script>
+
+    <title>LoFi FM</title>
+    <style>
+    	html {
+    		background: blue;
+    	}
+    	html, body {margin: 0; height: 100%; overflow: hidden}
+    </style>
+  </head>
+  <body unselectable="on">
+  	<img src="{% static 'bg.png' %}" style="position: absolute; height: 100% z-index: 0;">
+  	<div class="current_time_block" style="position: absolute; text-align: center; top:99px;">
+  		<h1 id="current_time" style="color:white"></h1>
+  		<script type="text/javascript">
+  			set_time();
+  		</script>
+  	</div>
+  	    <div class="root">
+    	<!---<iframe style="position: absolute; top:0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/bJUO1WnjXQY?autoplay=1&fs=0&controls=0&modestbranding=1" frameborder="0" allowfullscreen allowautoplay></iframe> --->
+    	<iframe style="position:  absolute; top: 295px; left: 15px; right: 0; width: 1050px; height: 590px;"src="https://www.youtube.com/embed/bJUO1WnjXQY?autoplay=1&fs=0&controls=0&modestbranding=1" frameborder="0" allowfullscreen allowautoplay></iframe>
+
+    </div>
+    
+  </body>
+</html>
